@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fábrica 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/style.css">
+<script type="importmap">
+{"imports": {
+  "three": "/vendor/three/three.module.js",
+  "three/addons/": "/vendor/three/addons/"
+}}
+</script>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--bg)" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M12 12l8-4.5M12 12v9M12 12L4 7.5"/></svg>
+      </div>
+      <div><h1>Fábrica 3D</h1><div class="muted small" id="sub">Fotos, planos y bocetos → modelos para SketchUp</div></div>
+    </div>
+    <div class="chips" id="chips"></div>
+  </header>
+
+  <nav class="tabs" aria-label="Secciones">
+    <a href="#mapa" data-v="mapa">Mapa</a>
+    <a href="#previas" data-v="previas">Previas <b id="nprev" class="acc"></b></a>
+    <a href="#nuevo" data-v="nuevo">Nuevo pedido</a>
+    <a href="#pedido" data-v="pedido" id="tabPedido" hidden>Pedido</a>
+  </nav>
+
+  <section id="v-mapa" class="section" style="gap:14px"></section>
+  <section id="v-previas" class="section" hidden></section>
+  <section id="v-nuevo" class="section" hidden></section>
+  <section id="v-pedido" class="order" hidden></section>
+</div>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

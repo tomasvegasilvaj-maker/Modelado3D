@@ -1,0 +1,19 @@
+# Render: New + → Blueprint → elegí el repo. Crea el servicio con esta configuración.
+services:
+  - type: web
+    name: fabrica3d
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: FABRICA_CLAVE
+        sync: false   # Render te la pide al crear el servicio
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: FABRICA_MODELO
+        value: claude-sonnet-5-5
+      - key: FABRICA_TOPE_USD
+        value: "2.5"
